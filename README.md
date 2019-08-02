@@ -8,6 +8,7 @@ An important restriction is that brute force should be avoided as much as possib
 In other words, solutions should be based on logic rules first. 
 
 Puzzles available so far:
+  * 2-In-A-Row
   * Hitori
   * Range
   * Tracks
