@@ -12,3 +12,5 @@ Puzzles available so far:
   * Hitori
   * Range
   * Tracks
+  * Bridges
+  * ABCView

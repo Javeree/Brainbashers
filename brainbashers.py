@@ -54,6 +54,9 @@ class Color:
     def termcolors(self):
         return Color.colorscheme[self.color]
 
+    def __eq__(self, other) -> bool:
+        return self.color == other.color
+
 
 class BrainbasherCell:
     def __init__(self, row, col, value = None, color = Color('grey')):
@@ -63,6 +66,10 @@ class BrainbasherCell:
 
     def issolved(self):
         raise UnimplementedException
+
+    def set_value(self, value):
+        self.value = value
+
 
 
 class ContradictionFound(Exception):
@@ -89,7 +96,7 @@ class BrainbasherRaster:
     def setvalues(self, values: list):
         for row in range(self.nbr_rows):
             for col in range(self.nbr_cols):
-                self.raster[row][col].value = values[row * self.nbr_cols + col]
+                self.raster[row][col].set_value(values[row * self.nbr_cols + col])
 
     def is_solved(self):
         return not any([self.raster[row][col].is_solved() for row in range(self.nbr_rows) for col in range(self.nbr_cols)])
